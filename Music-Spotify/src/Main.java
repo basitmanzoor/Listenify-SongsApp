@@ -77,6 +77,8 @@ public class Main {
                         System.out.println("You are already at the first song");
                     }
                     break;
+                case 3:
+                    //replay the current song
 
             }
         }
