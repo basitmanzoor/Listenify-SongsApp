@@ -26,8 +26,8 @@ public class Main {
 
         albums.get(0).addSongToPlayList("Iman",playlist_1);
         albums.get(0).addSongToPlayList("Kalakar",playlist_1);
-        albums.get(0).addSongToPlayList("Ali",playlist_1);
-        albums.get(0).addSongToPlayList("Peer Ti Peeri",playlist_1);
+        albums.get(1).addSongToPlayList("Ali",playlist_1);
+        albums.get(1).addSongToPlayList("Peer Ti Peeri",playlist_1);
 
         //print the playlist
         play(playlist_1);
@@ -79,10 +79,35 @@ public class Main {
                     break;
                 case 3:
                     //replay the current song
-
+                    if(forward == true){
+                        System.out.println(listIterator.previous().toString());
+                        forward = false;
+                    }else{
+                        //forward is false
+                        System.out.println(listIterator.next().toString());
+                        forward =true;
+                    }
+                    break;
+                case 4:
+                    //print all list of songs
+                    printAllSongs(playList);
+                    break;
+                case 5:
+                    printMenu();
+                    break;
+                case 6:
+                    //delete a song
+                    break;
             }
         }
 
+    }
+    public static void printAllSongs(LinkedList<Song> songs){
+        ListIterator<Song> listIterator = songs.listIterator();
+
+        while (listIterator.hasNext()){
+            System.out.println(listIterator.next().toString());
+        }
     }
     public static void printMenu(){
         //different options that we have
