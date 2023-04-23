@@ -97,6 +97,19 @@ public class Main {
                     break;
                 case 6:
                     //delete a song
+                    if(playList.size() > 0){
+                        System.out.println(listIterator.previous().toString()+ "has been removed from the playlist");
+                        listIterator.remove();
+                        if(playList.size() > 0 && listIterator.hasPrevious()){
+                            System.out.println("Now playing "+ listIterator.next().toString());
+                        }
+                        else if(playList.size() > 0 && listIterator.hasNext()){
+                            System.out.println("Now playing "+ listIterator.previous().toString());
+                        }
+                    }
+                    else{
+                        System.out.println("The playlist is already empty");
+                    }
                     break;
             }
         }
